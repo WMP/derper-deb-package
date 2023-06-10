@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+# Example: Enable and start the systemd service
+systemctl enable tailscale-derp.service
+systemctl start tailscale-derp.service
+
+# End of the installation steps
+
+exit 0

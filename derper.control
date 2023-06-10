@@ -1,0 +1,5 @@
+Package: tailscale-derp
+Version: 1.0
+Architecture: amd64
+Maintainer: Your Name <your@email.com>
+Description: Tailscale DERP Server

@@ -1,0 +1,22 @@
+[Unit]
+Description=Tailscale DERP Service
+After=network-online.target
+
+[Service]
+EnvironmentFile=/etc/default/tailscale-derp
+ExecStart=/usr/sbin/derper \
+    -hostname=${DERP_DOMAIN} \
+    -certmode=${DERP_CERT_MODE} \
+    -certdir=${DERP_CERT_DIR} \
+    -a=${DERP_ADDR} \
+    -stun=${DERP_STUN} \
+    -http-port=${DERP_HTTP_PORT} \
+    -verify-clients=${DERP_VERIFY_CLIENTS} \
+    -accept-connection-burst=${DERP_ACCEPT_CONNECTION_BURST} \
+    -accept-connection-limit=${DERP_ACCEPT_CONNECTION_LIMIT} \
+    -derp=${DERP_RUN_DERP}
+
+
+
+[Install]
+WantedBy=default.target
