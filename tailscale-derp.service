@@ -15,7 +15,8 @@ ExecStart=/usr/sbin/derper \
     -accept-connection-burst=${DERP_ACCEPT_CONNECTION_BURST} \
     -accept-connection-limit=${DERP_ACCEPT_CONNECTION_LIMIT} \
     -derp=${DERP_RUN_DERP}
-
+Restart=always
+RestartSec=10
 
 
 [Install]
